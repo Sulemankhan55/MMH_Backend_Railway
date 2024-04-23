@@ -73,7 +73,7 @@ const patientSchema = new mongoose.Schema({
   createdBy: { type: String , trim: true,required: true},
   registeredDate: { type: Date, default: Date.now },
   status: { type: String ,trim: true, required: true},
-  referredBy : { type: String ,trim: true, required: true},
+  referredBy : { type: String ,trim: true},
   comments : {type : String, trim: true},
   patientfeedback : {type : String, trim: true},
   closedate : {type : String},
