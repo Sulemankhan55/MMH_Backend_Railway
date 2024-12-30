@@ -3,17 +3,17 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
 let verifyToken=(token)=>{
-    let secretKey=process.env.SECRETKEY;
+    let SECRATEKEY=process.env.SECRATEKEY;
     try {
-        let data=jwt.verify(token,secretKey);
+        let data=jwt.verify(token,SECRATEKEY);
         return data.email;
     } catch (error) {
         return "invalid token"
     }
 }
 let getToken=(email)=>{
-    let secretKey=process.env.SECRETKEY;
-    let token=jwt.sign({email:email},secretKey,{ expiresIn: "120h" });
+    let SECRATEKEY=process.env.SECRATEKEY;
+    let token=jwt.sign({email:email},SECRATEKEY,{ expiresIn: "120h" });
     return token;
 }
 let passwordHash=async(userPassword)=>{
