@@ -1,16 +1,16 @@
-import AWSS from 'AWSS-sdk'
+import aws from 'aws-sdk'
 import dotenv from 'dotenv'
 dotenv.config()
 
 
-AWSS.config.update({
+aws.config.update({
   accessKeyId: process.env.AWSS_SEC_KEY,
   secretAccessKey: process.env.AWSS_ACCESS_KEY,
   region: process.env.AWSS_REGION
 });
 
 
-const s3 = new AWSS.S3();
+const s3 = new aws.S3();
 
  const uploadFile = async (files) => {
   const params = {

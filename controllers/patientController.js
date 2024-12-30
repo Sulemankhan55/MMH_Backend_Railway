@@ -1,7 +1,7 @@
 
 import PatientModel from "../models/patientModel.js";
 import status from 'http-status'
-import AWSS from 'AWSS-sdk'
+import aws from 'aws-sdk'
 
 export const getPatient = async (req, res) => {
     try {
@@ -69,13 +69,13 @@ export const createPatient = async (req, res) => {
 };
 
 //AWSS Upload Code
-AWSS.config.update({
+aws.config.update({
     accessKeyId: process.env.AWSS_ACCESS_KEY,
     secretAccessKey: process.env.AWSS_SEC_KEY,
     region: process.env.AWSS_REGION,
 });
 
-const s3 = new AWSS.S3();
+const s3 = new aws.S3();
 
 const uploadFile = async (file) => {
     // console.log('File Buffer:', file.buffer); // Log the file buffer
