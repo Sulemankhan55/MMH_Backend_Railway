@@ -31,6 +31,6 @@ let checkPassword=async(plainPassword,dbPass)=>{
     } catch (error) {
         console.log(error)
     }
-}
+};
 
 export {passwordHash,checkPassword,getToken,verifyToken}
