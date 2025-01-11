@@ -16,14 +16,10 @@ connectDB();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// CORS Configuration
+
 const corsOptions = {
-  origin: [
-    "http://localhost:3000", // Add your frontend domain(s) here
-    "https://mmh.tekisky.com"
-  ],
+  origin: "*", 
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, // Allow credentials (cookies, Authorization headers, etc.)
 };
 
 // Express Middlewares
